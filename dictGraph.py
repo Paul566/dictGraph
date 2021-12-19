@@ -90,7 +90,8 @@ def plotCompData(file_read, file_write, label, n):
         fields = f.readline().split()
         sizes.append(int(fields[0]))
         counts.append(int(fields[1]))
-    fig, ax = plt.subplots(1)
+
+    '''fig, ax = plt.subplots(1)
     plt.xlabel('размер компоненты связности')
     plt.ylabel('количество компонент связности данного размера')
     plt.title(label)
@@ -98,7 +99,7 @@ def plotCompData(file_read, file_write, label, n):
     plt.yscale('log')
     plt.xscale('log')
     ax.scatter(sizes, counts, marker='o')
-    plt.savefig(file_write + '.png', dpi=200)
+    plt.savefig(file_write + '.png', dpi=200)'''
 
 
 def printLongestPath(words, filename, n):
@@ -110,11 +111,11 @@ def printLongestPath(words, filename, n):
 if __name__ == "__main__":
     n = 20000
     #print(top_n_list('en', 50, wordlist='best'))
-    words_en = top_n_list('en', n, wordlist='best')
-    words_ru = top_n_list('ru', n, wordlist='best')
+    #words_en = top_n_list('en', n, wordlist='best')
+    #words_ru = top_n_list('ru', n, wordlist='best')
     #saveEdges(words_en, 'edges_en_10')
     #saveEdges(words_ru, 'edges_ru')
 
     #plotSpectrum('spectrum_ru_20k', 'spectrum_ru_20k', n, 'Russian')
-    #plotCompData('componentsData_ru_20k', 'componentsData_ru_20k_loglog', 'Russian', n=27)
+    plotCompData('componentsData_en_20k', 'componentsData_en_20k_loglog', 'English', n=27)
     #printLongestPath(words_ru, 'longestPath_ru_20k', n=31)
